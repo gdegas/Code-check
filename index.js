@@ -27,7 +27,7 @@ function getTodos(url) {
 // })
 const url = 'https://jsonplaceholder.typicode.com';
 
-const brettsData = async (url, userId) => {
+const getUserData = async (url, userId) => {
   try {
     const usersResponse = await fetch(url + '/users/' + userId)
     const userJson = await usersResponse.json();
@@ -48,21 +48,19 @@ const brettsData = async (url, userId) => {
     // const post5Response = await fetch(url + '/posts/5')
     // const post5Json = await postsResponse.json()
     console.log(
-      `${userJson.username} has ${postsJson.length} posts, ${albumsJson.length} albums, and ${todosJson.length} todos`,
-      `post 1: ${postsJson[0].title}`,
-      `post 2: ${postsJson[1].title}`,
-      `post 3: ${postsJson[2].title}`,
-      `post 4: ${postsJson[3].title}`,
-      `post 5: ${postsJson[4].title}`,
-      
-
-    );
+        `${userJson.username} has ${postsJson.length} posts, ${albumsJson.length} albums, and ${todosJson.length} todos`
+        );
+      console.log(`post 1: ${postsJson[0].title}`);
+      console.log(`post 2: ${postsJson[1].title}`);
+      console.log(`post 3: ${postsJson[2].title}`);
+      console.log(`post 4: ${postsJson[3].title}`);
+      console.log(`post 5: ${postsJson[4].title}`);
   } catch (error) {
     console.log(error);
   }
 };
 
-brettsData(url, 1);
+getUserData(url, 2);
 
   
 
